@@ -4,8 +4,6 @@ import ThemeContext from './ThemeContext';
 function HeaderButton() {
   const themeContext = React.useContext(ThemeContext);
 
-  console.log('themeContext', themeContext.backgroundColor)
-
   return (
     <div>
       <button style={{color: themeContext.color, backgroundColor: themeContext.backgroundColor}}>Press me</button>
