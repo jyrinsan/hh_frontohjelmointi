@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Todolist = ({todos, todo, addTodo, inputChanged}) => {
+const Todolist = () => {
+
+  const [todo, setTodo] = useState({desc: '', date: ''});
+  const [todos, setTodos] = useState([]);
+  
+  const inputChanged = (event) => {
+    setTodo({...todo, [event.target.name]: event.target.value});
+  }
+
+  const addTodo = (event) => {
+    event.preventDefault();
+    setTodos([...todos, todo]);
+  }
 
   return (
     <div>
