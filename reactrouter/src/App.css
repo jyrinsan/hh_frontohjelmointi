@@ -1,0 +1,9 @@
+div {
+    text-align: center;
+}
+.mustalaatikko {
+    color: white;
+    background-color: black;
+    max-width: 70%;
+    margin: auto;
+}
