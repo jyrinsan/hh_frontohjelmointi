@@ -3,7 +3,7 @@ import './App.css';
 import { Button, TextField } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { LocalizationProvider, DatePicker } from '@mui/lab';
-import ruLocale from 'date-fns/locale/fi';
+import fiLocale from 'date-fns/locale/fi';
 
 function App() {
   const [todo, setTodo] = useState({description: '', date: ''});
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <LocalizationProvider dateAdapter={AdapterDateFns} locale={ruLocale}>
+      <LocalizationProvider dateAdapter={AdapterDateFns} locale={fiLocale}>
         <DatePicker className="datePicker"
           label="Date"
           value={todo.date}
