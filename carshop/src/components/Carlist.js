@@ -53,17 +53,7 @@ export default function Carlist() {
     .then(res => fetchData())
     .catch(err => console.error(err));
 
-  const saveCar = (car) => {
-      fetch('http://carstockrest.herokuapp.com/cars', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'
-      }, body: JSON.stringify(car)
-      })
-      .then(res => fetchData())
-      .catch(err => console.error(err));
   }; 
-
-}; 
 
   const handleClick = () => {
     setOpen(true);
@@ -113,10 +103,6 @@ export default function Carlist() {
         />
         <Addcar saveCar={saveCar}/>
         <AgGridReact 
-          frameworkComponents={{
-            deleteRenderer: (field) => <Button size='small' color='error' onClick={() => deleteCar(field.value)}>Delete</Button>,
-            editRenderer: row => <Editcar car={row} />
-          }}
           ref={gridRef}
           onGridReady={params => gridRef.current=params.api}
           rowSelection="single"
